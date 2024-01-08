@@ -1,20 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package clientserversocket;
+import java.io.*;
+import java.net.*;
 
-/**
- *
- * @author anji
- */
-public class ClientServerSocket {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class ClientServerSocket 
+{
+    public static void main(String[] args)
+    {
+        try{
+        ServerSocket sock = new ServerSocket(1111);
+        Socket s = sock.accept();
+        DataInputStream istream = new DataInputStream(s.getInputStream());
+        String str = (String)istream.readUTF();
+            System.out.println("Message:"+str);
+            sock.close();
+        
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }
-    
 }
