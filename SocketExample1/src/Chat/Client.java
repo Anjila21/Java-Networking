@@ -90,7 +90,7 @@ public class Client extends javax.swing.JFrame {
     private void MessageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageButtonActionPerformed
         // TODO add your handling code here: try
   try{
-      String msg = " ";
+      String msg = "";
       msg = MessageText.getText();
       dout.writeUTF(msg);
       MessageText.setText("");
